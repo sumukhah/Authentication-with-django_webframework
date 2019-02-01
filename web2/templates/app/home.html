@@ -1,0 +1,61 @@
+{%extends './base.html'%}
+{%block content%}
+<h1>THIS IS HEADING
+</h1>
+{%if username%}
+<h3><span class="badge badge-secondary">Logged in as {{username}}</span></h3>
+{%endif%}
+{% if user.is_authenticated %}
+
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color:#3399ff;">
+  <a class="navbar-brand" href="#"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="$">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="http://127.0.0.1:8000/logout">Logout <span class="sr-only">(current)</span></a>
+      </li>
+
+
+{%else%}
+
+
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color:#edbbbb;">
+  <a class="navbar-brand" href="#"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="">Home <span class="sr-only">(current)</span></a>
+      </li>
+
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown link
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="#">Action</a>
+          <a class="dropdown-item" href="#">Another action</a>
+          <a class="dropdown-item" href="#">Something else here</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <ul class="nav justify-content-right" >
+<li class="nav-item">
+      <a class="nav-link" href="regesteration">Regester</a>
+    </li>
+
+  <li class="nav-item" >
+    <a class="nav-link" href="http://127.0.0.1:8000/login/" >Login</a>
+  </li>
+</nav>
+{%endif%}{%endblock%}

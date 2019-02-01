@@ -1,0 +1,17 @@
+{%extends "./base.html"%}
+{%block content%}
+  	<form method="POST" action="/login/">
+      {%csrf_token%}
+      <label for="username">Username:
+      <input type="text" name='username'>
+    </label>
+      <br>
+      <label for='password'>password
+      <input type="password" name="password">
+    </label>
+
+  		{{context}}
+
+      <input type="submit" name="Submit">
+    </form>
+ {%endblock%}
